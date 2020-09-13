@@ -1,1 +1,0 @@
-class UserForm(forms.ModelForm)
