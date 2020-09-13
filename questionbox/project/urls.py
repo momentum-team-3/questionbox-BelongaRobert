@@ -20,7 +20,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('questions/', include('questions.urls')),
+    path('questionbox/', include('questionbox.urls')),
+
+
 ]
 
 if settings.DEBUG:
