@@ -1,11 +1,13 @@
 from django.views.generic.detail import DetailView
 from Django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
-from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Question, Answer
-from users import User
+from django.views import View
 
 
+class list_question(ListView):
+    model = Question
+    template_name = "list_question.html"
 
 class view_question(DetailView):
     model = Question
