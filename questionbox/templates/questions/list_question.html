@@ -10,3 +10,6 @@
         <p>{{ question.body }}</p>
         <a href="{% url 'view_answer' questions.pk %}">View answers</a>
     </div>
+
+    {% endfor %}
+    {% endblock %}

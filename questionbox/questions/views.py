@@ -6,6 +6,7 @@ from django.views.generic.list import ListView
 from .models import Question, Answer
 from django.views.generic import View
 from questions import forms
+from templates import questions, answers
 
 
 #class SignUpView(CreateView):
@@ -20,8 +21,8 @@ class list_question(ListView):
 
 class view_question(DetailView):
     model = Question
-    template_name = "questions/view_question.html"
-
+    template_name = "view_question.html"
+    
 class view_answer(DetailView):
     model = Answer
     template_name = "answers/view_answer.html"
