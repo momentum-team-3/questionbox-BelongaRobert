@@ -1,11 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.detail import DetailView
-from Django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from .models import Question, Answer
 from django.views.generic import View
+from questions import forms
 
+
+#class SignUpView(CreateView):
+ #   form_class = SignUpForm
+  #  success_url = reverse_lazy('login')
+   # template_name = 'create_user.html'
 
 class list_question(ListView):
     model = Question

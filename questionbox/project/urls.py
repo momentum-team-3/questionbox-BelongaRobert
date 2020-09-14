@@ -19,18 +19,22 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from questions import views
+from templates import questions, answers
+
+#IT HAS TO TAKE A REQUEST AND RETURN A RESPONSE! (AS.VIEW())
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("list/", views.list_question.as_view(), name="list_question"), 
-    path("view/<int:pk>", views.view_question.as_view(), name="view_question"),
+    #path('signup/', SignUpView.as_view(), name='signup'),
+    path('admin/', admin.site.urls), 
+    path('view_question<int:pk>/', views.view_question.as_view(), name="view_question"),
+    path('', views.list_question.as_view(), name="list_question"),
+    #path('templates/')
 ]
 
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
-        path
 
         # For django versions before 2.0:
         # url(r'^__debug__/', include(debug_toolbar.urls)),

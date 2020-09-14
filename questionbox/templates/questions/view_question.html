@@ -6,7 +6,6 @@
     <div>{{ question.body }}</div><br>
     <div>{{ question.date }}</div><br>
     <p>
-        <a href="{% url 'edit_question' questions.pk %}">Edit</a>
         <a href="{% url 'delete_question' questions.pk %}">Delete</a>
     </p>
 {% endblock %}
