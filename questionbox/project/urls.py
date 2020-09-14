@@ -21,13 +21,16 @@ from django.urls import include, path
 from questions import views
 from templates import questions, answers
 
-#IT HAS TO TAKE A REQUEST AND RETURN A RESPONSE! (AS.VIEW())
+#IT HAS TO TAKE A REQUEST AND RETURN A RESPONSE! (AS_VIEW())
 
 urlpatterns = [
     #path('signup/', SignUpView.as_view(), name='signup'),
     path('admin/', admin.site.urls), 
-    path('view_question<int:pk>/', views.view_question.as_view(), name="view_question"),
+    path('questions/view_question<int:pk>/', views.view_question.as_view(), name="view_question"),
     path('', views.list_question.as_view(), name="list_question"),
+    path('questions/create_question<int:pk>/', views.create_question.as_view(), name="create_question"),
+    path('questions/edit_question<int:pk>/', views.edit_question.as_view(), name="edit_question.html"),
+    
     #path('templates/')
 ]
 

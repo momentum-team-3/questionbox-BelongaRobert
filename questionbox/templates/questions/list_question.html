@@ -8,6 +8,7 @@
         <p>{{ question.title }}</p>
         <p>{{ question.question_of }}</p>
         <p>{{ question.body }}</p>
+        <p>{{ question.date }}</p>
         <a href="{% url 'view_answer' questions.pk %}">View answers</a>
     </div>
 

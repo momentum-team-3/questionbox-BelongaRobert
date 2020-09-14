@@ -1,15 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Delete your Question???</h1>
+<h1>Delete your Question?</h1>
 <div>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <p><b>Are you sure?!?</b></p>
         <div>
-            <button type="submit">Yes! I don't want people to learn!</button>
-            <a href="{% url 'view_question' questions.pk %}">Nevermind, information shan't be destroyed</a>
+            <button type="submit">Yes</button>
+            <a href="{% url 'view_question' questions.pk %}">No</a>
         </div>
     </form>
 </div>

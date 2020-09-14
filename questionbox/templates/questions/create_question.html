@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Ask your question here!</h2>
+<h2>Ask your question to the community</h2>
 <div>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
-            <button type="submit">Create Question</button>
+            <button type="submit">Ask question</button>
         </div>
     </form>
 </div>
