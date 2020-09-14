@@ -25,11 +25,13 @@ from templates import questions, answers
 
 urlpatterns = [
     #path('signup/', SignUpView.as_view(), name='signup'),
+    path('accounts/', include('registration.backends.default.urls')),
     path('admin/', admin.site.urls), 
     path('questions/view_question<int:pk>/', views.view_question.as_view(), name="view_question"),
-    path('', views.list_question.as_view(), name="list_question"),
-    path('questions/create_question<int:pk>/', views.create_question.as_view(), name="create_question"),
+    path('list_question/', views.list_question.as_view(), name="list_question"),
+    path('questions/create_question/', views.create_question.as_view(), name="create_question"),
     path('questions/edit_question<int:pk>/', views.edit_question.as_view(), name="edit_question.html"),
+    path('', views.HomeView.as_view(), name="home"),
     
     #path('templates/')
 ]
