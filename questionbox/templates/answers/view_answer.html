@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{for answers in object_list}
+    <div>{{ Answer.answer_of }}</div>
+    <div>{{ Answer.title }}</div><br>
+    <div>{{ Answer.body }}</div><br>
+    <div>{{ Answer.date }}</div><br>
+    <p>
+        <a href="{% url 'delete_answers' answerss.pk %}">Delete</a>
+    </p>
+{% endfor %}
+{% endblock %}

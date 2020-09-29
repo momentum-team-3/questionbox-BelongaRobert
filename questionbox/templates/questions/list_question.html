@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>List of Questions</h1>
+    {% for question in object_list %}
+
+    <div>
+        <p>{{ Question.title }}</p>
+        <p>{{ Question.question_of }}</p>
+        <p>{{ Question.body }}</p>
+        <p>{{ Question.date }}</p>
+        <a href="{% url 'view_answer' questions.pk %}">View answers</a>
+    </div>
+
+    {% endfor %}
+    {% endblock %}

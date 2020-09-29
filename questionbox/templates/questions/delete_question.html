@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Delete your Question?</h1>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button type="submit">Yes</button>
+            <a href="{% url 'view_question' questions.pk %}">No</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
